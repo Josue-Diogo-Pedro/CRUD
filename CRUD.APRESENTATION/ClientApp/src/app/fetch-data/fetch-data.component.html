@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="page-header">
+    <h1>Product Master Details</h1>
+  </div>
+</div>
+<p>
+  <a [routerLink]="['/product-add']">Novo produto</a>
+</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th> Título </th>
+      <th> Descrição </th>
+      
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of productList">
+      <td>{{ item.Titulo }}</td>
+      <td>{{ item.Descricao }}</td>
+      <td>
+        <a [routerLink]="['/product-edit/', item.id]">Editar</a> |
+        <a [routerLink]="" (click)="delete(item.id, item.Id)">Eliminar</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
